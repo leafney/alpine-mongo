@@ -1,7 +1,7 @@
-FROM alpine:edge
+FROM alpine:3.7
 MAINTAINER leafney "babycoolzx@126.com"
 
-ENV MONGO_VERSION=3.4.4-r0
+ENV MONGO_VERSION=3.4.10-r0
 
 RUN apk add --no-cache mongodb=${MONGO_VERSION} wget && \
     mkdir -p /data/db && \
@@ -9,8 +9,8 @@ RUN apk add --no-cache mongodb=${MONGO_VERSION} wget && \
     mkdir -p /data/config && \
     addgroup mongodb mongodb && \
     wget --no-check-certificate -O /usr/local/bin/gosu https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64 && \
-	chmod +x /usr/local/bin/gosu && \
-	gosu nobody true && \
+    chmod +x /usr/local/bin/gosu && \
+    gosu nobody true && \
     rm -rf /var/cache/apk/*
 
 COPY ./docker-entrypoint.sh /usr/local/bin/
