@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.9
 MAINTAINER leafney "babycoolzx@126.com"
 
 ENV MONGO_VERSION=4.0.5-r0
