@@ -1,7 +1,7 @@
 FROM alpine:edge
 MAINTAINER leafney "babycoolzx@126.com"
 
-ENV MONGO_VERSION=4.0.5-r0
+ENV MONGO_VERSION=4.0.6-r0
 
 RUN apk add --no-cache mongodb=${MONGO_VERSION} wget && \
     mkdir -p /data/db && \
